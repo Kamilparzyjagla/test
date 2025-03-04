@@ -131,4 +131,3 @@ public class VierGewinnt {
         currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
     }
 }
-
