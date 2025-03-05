@@ -4,7 +4,7 @@ import java.awt.*;
 
 import javax.swing.JLabel;
 
-public class Draw extends JLabel {
+public class Ampel extends JLabel {
 
     @Override
     protected void paintComponent (Graphics g) {

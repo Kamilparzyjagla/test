@@ -1,13 +1,11 @@
 package Ampel;
 
-import java.time.chrono.JapaneseChronology;
-
-        import javax.swing.JFrame;
+import javax.swing.JFrame;
 
 public class Main {
 
     JFrame jf1;
-            Draw draw;
+            Ampel ampel;
 
     static int ampelstate = 0;
 
@@ -20,9 +18,9 @@ public class Main {
         jf1.setResizable(false);
         jf1.setTitle("Ampel");
 
-        draw = new Draw();
+        ampel = new Ampel();
 //        draw.setBounds(0, 0, 200, 300);
-        jf1.add(draw);
+        jf1.add(ampel);
 
         jf1.setVisible(true);
 
