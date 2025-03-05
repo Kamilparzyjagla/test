@@ -5,11 +5,9 @@ import javax.swing.JFrame;
 public class Main {
 
     JFrame jf1;
-            Ampel ampel;
 
-    static int ampelstate = 0;
 
-    public Main() {
+    public Main(Ampel ampel) {
 
         jf1 = new JFrame();
         jf1.setSize(400, 600);
@@ -18,8 +16,6 @@ public class Main {
         jf1.setResizable(false);
         jf1.setTitle("Ampel");
 
-        ampel = new Ampel();
-//        draw.setBounds(0, 0, 200, 300);
         jf1.add(ampel);
 
         jf1.setVisible(true);
@@ -28,8 +24,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        new Main();
-        new Ampelschaltung();
+        AmpelState statusAmpel1 = new AmpelState();
+        Ampel ampel1 = new Ampel(statusAmpel1);
+
+        new Main(ampel1);
+        new Ampelschaltung(statusAmpel1);
 
     }
 

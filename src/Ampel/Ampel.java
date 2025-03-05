@@ -6,8 +6,14 @@ import javax.swing.JLabel;
 
 public class Ampel extends JLabel {
 
+    private final AmpelState statusAmpel;
+
+    public Ampel(AmpelState statusAmpel) {
+        this.statusAmpel = statusAmpel;
+    }
+
     @Override
-    protected void paintComponent (Graphics g) {
+    protected void paintComponent(Graphics g) {
 
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
@@ -16,27 +22,27 @@ public class Ampel extends JLabel {
         //draw
 
         g.setColor(Color.DARK_GRAY);
-        g.fillRect(0,0,400, 600);
+        g.fillRect(0, 0, 400, 600);
 
-        switch (Main.ampelstate){
-            case 0:
+        switch (statusAmpel.getAktuellerZustand()) {
+            case Rot:
                 g.setColor(Color.RED);
-                g.fillOval(125, 25,150,150);
+                g.fillOval(125, 25, 150, 150);
                 break;
-            case 1:
+            case Rot_Orange:
                 g.setColor(Color.RED);
-                        g.fillOval(125, 25,150,150);
+                g.fillOval(125, 25, 150, 150);
                 g.setColor(Color.ORANGE);
-                g.fillOval(125, 200,150,150);
+                g.fillOval(125, 200, 150, 150);
 
                 break;
-            case 2:
+            case Grün:
                 g.setColor(Color.GREEN);
-                g.fillOval(125, 375,150,150);
+                g.fillOval(125, 375, 150, 150);
                 break;
-            case 3:
+            case Orange:
                 g.setColor(Color.ORANGE);
-                g.fillOval(125, 200,150,150);
+                g.fillOval(125, 200, 150, 150);
 
                 break;
         }
