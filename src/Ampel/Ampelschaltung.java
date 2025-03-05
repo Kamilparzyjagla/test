@@ -33,7 +33,7 @@ public class Ampelschaltung {
                 }
 
             }
-        }, 1000, 2000);
+        }, 500, 1250);
     }
 
 }
