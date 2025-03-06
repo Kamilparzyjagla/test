@@ -22,4 +22,9 @@ public class StandardVerhalten implements Ampelverhalten{
                 statusAmpel.setAktuellerZustand(AmpelState.State.Rot);
                 break;}
     }
+
+    @Override
+    public int getWartezeit() {
+        return 1250;
+    }
 }

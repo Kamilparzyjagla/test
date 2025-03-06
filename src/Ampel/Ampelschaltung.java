@@ -17,7 +17,7 @@ public class Ampelschaltung {
                 ampelverhalten.schalteAmpel(statusAmpel);
 
             }
-        }, 500, 1111);
+        }, 500, ampelverhalten.getWartezeit());
     }
 
 }

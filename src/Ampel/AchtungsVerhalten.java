@@ -19,5 +19,10 @@ public class AchtungsVerhalten implements Ampelverhalten {
 
     }
 
+    @Override
+    public int getWartezeit() {
+        return 800;
+    }
+
 }
 
