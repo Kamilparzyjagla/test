@@ -25,7 +25,6 @@ public class Main {
         frame.setVisible(true);
         frame.setSize(boardWidth, boardHeight);
         frame.setLocationRelativeTo(null);
-        frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
 
@@ -105,28 +104,28 @@ public class Main {
         }
 
         //diagonally
-        if (board[0][0].getText() .equals(board[1][1].getText()) &&
-                board[1][1].getText() .equals(board[2][2].getText()) &&
-               ! board[0][0].getText() .equals("")) {
-            for (int i = 0; i < 3; i++) {
-                setWinner(board[i][i]);
+            if (board[0][0].getText() .equals(board[1][1].getText()) &&
+                    board[1][1].getText() .equals(board[2][2].getText()) &&
+                    ! board[0][0].getText() .equals("")) {
+                for (int i = 0; i < 3; i++) {
+                    setWinner(board[i][i]);
+                }
+                gameOver = true;
+                return;
             }
-            gameOver = true;
-            return;
-        }
 
-        //anti-diagonally
-        if (board[0][2].getText() .equals(board[1][1].getText()) &&
-                board[1][1].getText() .equals(board[2][0].getText()) &&
-               ! board[0][2].getText() .equals("")) {
-            setWinner(board[0][2]);
-            setWinner(board[1][1]);
-            setWinner(board[2][0]);
-            gameOver = true;
-            return;
-        }
+            //anti-diagonally
+            if (board[0][2].getText() .equals(board[1][1].getText()) &&
+                    board[1][1].getText() .equals(board[2][0].getText()) &&
+                    ! board[0][2].getText() .equals("")) {
+                setWinner(board[0][2]);
+                setWinner(board[1][1]);
+                setWinner(board[2][0]);
+                gameOver = true;
+                return;
+            }
 
-        if (turns == 9) {
+            if (turns == 9) {
             for (int r = 0; r < 3; r++) {
                 for (int c = 0; c < 3; c++) {
                     setTie(board[r][c]);
@@ -137,14 +136,14 @@ public class Main {
     }
 
     void setWinner(JButton tile) {
-        tile.setForeground(Color.green);
-        tile.setBackground(Color.gray);
+        tile.setForeground(Color.GREEN);
+        tile.setBackground(Color.black);
         textLabel.setText(currentPlayer + " is the winner!");
     }
 
     void setTie(JButton tile) {
-        tile.setForeground(Color.orange);
-        tile.setBackground(Color.gray);
+        tile.setForeground(Color.RED);
+        tile.setBackground(Color.BLACK);
         textLabel.setText("Tie!");
     }
 }
