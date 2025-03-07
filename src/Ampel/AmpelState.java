@@ -8,7 +8,6 @@ public class AmpelState {
         Orange,
         Rot,
         Rot_Orange,
-        blinkend_Orange,
         aus
     }
 

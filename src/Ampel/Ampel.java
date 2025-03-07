@@ -21,7 +21,7 @@ public class Ampel extends JLabel {
 
         //draw
 
-        g.setColor(Color.DARK_GRAY);
+        g.setColor(Color.BLACK);
         g.fillRect(0, 0, 400, 600);
 
         switch (statusAmpel.getAktuellerZustand()) {
